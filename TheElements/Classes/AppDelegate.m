@@ -65,6 +65,11 @@
 
 @property (nonatomic, retain) UIViewController *rootViewController;
 
+// A ref counted dictionary is required to hold active refs to UIImage objects
+// cached by the custom UIImage overloaded methods.
+
+@property (nonatomic, retain) NSMutableDictionary *imageCache;
+
 @end
 
 @implementation AppDelegate
@@ -73,19 +78,10 @@
 	
 #if defined(PNGSQUARED)
   
-  // Kick off texture render thread. This render thread must be stored as a ref
-  // off the AppDelegate since the thread is long lived. This render thread ref
-  // must not be hung off a short lived object like a view controller.
+  // Invoke setup method to swap in custom impl of [UIImage imageNamed:]
   
-  TextureRenderThread *textureRenderThread = [TextureRenderThread textureRenderThread];
-  
-  self.textureRenderThread = textureRenderThread;
-  
-  [textureRenderThread startRenderThread];
-  
-  [textureRenderThread enqueueRenderAllOperation];
-  
-  [UIImage setupAppInstance];
+  self.imageCache = [NSMutableDictionary dictionary];
+  [UIImage setupAppInstance:self.imageCache];
   
   // When using the PNGSquared target, need to ensure that all image resources are
   // decoded before the main tab bar can be created since the images used in the
@@ -174,6 +170,10 @@
 #if defined(DEBUG) || 1
   NSLog(@"allReadyNotification");
 #endif // DEBUG
+  
+  [[NSNotificationCenter defaultCenter] removeObserver:self
+                                               name:UIImagePNGSquaredAllReadyNotification
+                                             object:nil];
   
   [self.imageView removeFromSuperview];
   self.imageView = nil;

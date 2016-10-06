@@ -10,11 +10,12 @@
 // Need to use some load time Objective-C magic to override methods in UIImage
 #import <objc/runtime.h>
 
-#import "AppDelegatePrivate.h"
-
 // Ignore warnings about implementing same mehtod signature, since this is exactly what is being done
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+
+// Ref to current image cache, note that this ref is not reference is not held.
+static void *imageCacheDict = nil;
 
 @implementation UIImage (UIImagePNGSquared)
 
@@ -22,20 +23,8 @@
 
 + (UIImage*) imageNamed2:(NSString*)name
 {
-  //NSLog(@"imageNamed2 \"%@\"", name);
-  
-  // Use assocData to map a prefix to the cached PNG filename, this mapping
-  // is updated in the main thread each time a Notification is processed.
-  
-  AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-  TextureRenderThread *textureRenderThread = appDelegate.textureRenderThread;
-  
-  NSAssert(textureRenderThread, @"AppDelegate.textureRenderThread");
-  
-  NSMutableDictionary *assocData = textureRenderThread.assocData;
-  
-  NSAssert(assocData, @"AppDelegate.textureRenderThread.assocData");
-  
+  NSLog(@"imageNamed2 \"%@\"", name);
+    
   // If name contains ".png" at the end then strip off the suffix
   
   NSString *nameNoSuffix = name;
@@ -44,7 +33,9 @@
     nameNoSuffix = [nameNoSuffix stringByDeletingPathExtension];
   }
   
-  NSString *cachedPath = [assocData objectForKey:nameNoSuffix];
+  NSMutableDictionary *imageCache = (__bridge id) imageCacheDict;
+  NSAssert(imageCache, @"imageNamed invoked before setupAppInstance was invoked");
+  NSString *cachedPath = [imageCache objectForKey:nameNoSuffix];
   
   if (cachedPath != nil) {
     // Image was already decoded by PNGSquared framework and is cached as a PNG
@@ -88,25 +79,18 @@
 // at app startup. Since the methods swap is at the Objective-C runtime layer,
 // this will have no effect on compilation or linking related issues.
 
-+ (void) setupAppInstance
++ (void) setupAppInstance:(NSMutableDictionary*)cacheDict
 {
+  NSAssert(cacheDict, @"setupAppInstance cacheDict argument is nil");
+  imageCacheDict = (__bridge void*) cacheDict;
   [self swapStaticMethods:@selector(imageNamed:) sel2:@selector(imageNamed2:)];
-  
-  [self makeNotificationObserver];
 }
-
-// Objective-C init time hook to load app instance
-
-//+ (void) load
-//{
-//  [self setupAppInstance];
-//}
 
 + (void) makeNotificationObserver
 {
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(textureRenderThreadRenderAllReadyNotification:)
-                                               name:TextureRenderThreadRenderAllReadyNotification
+                                               name:UIImagePNGSquaredAllReadyNotification
                                              object:nil];
 }
 
@@ -117,16 +101,6 @@
 #if defined(DEBUG) || 1
   NSLog(@"textureRenderThreadRenderAllReadyNotification in UIImage+PNGSquared");
 #endif // DEBUG
-  
-  AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-  TextureRenderThread *textureRenderThread = appDelegate.textureRenderThread;
-  
-  if (textureRenderThread == nil) {
-    return;
-  }
-  
-  NSMutableDictionary *assocData = textureRenderThread.assocData;
-  NSAssert(assocData, @"AppDelegate.textureRenderThread.assocData");
   
   NSDictionary *cachedTable = [notification.userInfo objectForKey:@"cachedTable"];
   NSAssert(cachedTable, @"cachedTable");
@@ -140,7 +114,8 @@
     NSLog(@"update cachedTable in textureRenderThreadRenderAllReadyNotification \"%@\" -> \"%@\"", prefix, cachedPNGPath);
 #endif // DEBUG
 
-    [assocData setObject:cachedPNGPath forKey:prefix];
+    NSMutableDictionary *imageCache = (__bridge id) imageCacheDict;
+    [imageCache setObject:cachedPNGPath forKey:prefix];
   }
   
   // Deliver UIImagePNGSquaredAllReadyNotification now that cached files are known

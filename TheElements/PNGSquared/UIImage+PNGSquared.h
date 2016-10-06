@@ -21,6 +21,6 @@
 
 @interface UIImage (UIImagePNGSquared)
 
-+ (void) setupAppInstance;
++ (void) setupAppInstance:(NSMutableDictionary*)cacheDict;
 
 @end

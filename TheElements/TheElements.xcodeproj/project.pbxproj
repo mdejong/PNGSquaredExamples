@@ -290,13 +290,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3CDA4DC51B30C147005722D2 /* PNGSquared */,
 				535A1E5E16CEA30F00B7A289 /* MainStoryboard.storyboard */,
 				C8657C230D59017B00CB6FC9 /* Elements.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				3CDA4DC21B30BF48005722D2 /* Info2.plist */,
 				C8E2AC640D5B7AAE0056EE5C /* Images */,
 				3CDD611A1DA6F23E00F9383F /* Images2 */,
+				3CDA4DC51B30C147005722D2 /* PNGSquared */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -708,7 +708,7 @@
 				GCC_PREFIX_HEADER = TheElements_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = TheElements;
 				SDKROOT = iphoneos;
 			};
@@ -726,7 +726,7 @@
 				GCC_PREFIX_HEADER = TheElements_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = TheElements;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -752,7 +752,7 @@
 				GCC_PREFIX_HEADER = TheElements_Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/Info2.plist";
 				INSTALL_PATH = /Applications;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DPNGSQUARED=1";
 				PRODUCT_NAME = TheElements2;
 				SDKROOT = iphoneos;
@@ -777,7 +777,7 @@
 				GCC_PREFIX_HEADER = TheElements_Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/Info2.plist";
 				INSTALL_PATH = /Applications;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DPNGSQUARED=1";
 				PRODUCT_NAME = TheElements2;
 				PROVISIONING_PROFILE = "";
