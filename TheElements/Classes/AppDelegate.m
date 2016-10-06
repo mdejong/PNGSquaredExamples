@@ -98,6 +98,8 @@
   
   [self.window addSubview:imageView];
   
+  self.window.rootViewController = [[UIViewController alloc] init];
+  
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(allReadyNotification:)
                                                name:UIImagePNGSquaredAllReadyNotification
@@ -167,7 +169,7 @@
 
 - (void) allReadyNotification:(NSNotification*)notification
 {
-#if defined(DEBUG) || 1
+#if defined(DEBUG)
   NSLog(@"allReadyNotification");
 #endif // DEBUG
   

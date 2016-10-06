@@ -7,6 +7,8 @@
 
 #import "UIImage+PNGSquared.h"
 
+#import "PNGSquared/PNGSquared.h"
+
 // Need to use some load time Objective-C magic to override methods in UIImage
 #import <objc/runtime.h>
 
@@ -23,7 +25,7 @@ static void *imageCacheDict = nil;
 
 + (UIImage*) imageNamed2:(NSString*)name
 {
-  NSLog(@"imageNamed2 \"%@\"", name);
+  //NSLog(@"imageNamed2 \"%@\"", name);
     
   // If name contains ".png" at the end then strip off the suffix
   
@@ -35,28 +37,20 @@ static void *imageCacheDict = nil;
   
   NSMutableDictionary *imageCache = (__bridge id) imageCacheDict;
   NSAssert(imageCache, @"imageNamed invoked before setupAppInstance was invoked");
-  NSString *cachedPath = [imageCache objectForKey:nameNoSuffix];
+  id obj = [imageCache objectForKey:nameNoSuffix];
   
-  if (cachedPath != nil) {
-    // Image was already decoded by PNGSquared framework and is cached as a PNG
-    
-    // Note that invoking imageNamed with the fully qualified path name will
-    // hold the image file in the cache which results in faster scrolling for
-    // images used in table cells.
-    
-    UIImage *cachedImage;
-    
-    if ((1)) {
-      cachedImage = [self imageWithContentsOfFile:cachedPath];
-    } else {
-      cachedImage = [self imageNamed:cachedPath];
-    }
-    
-    return cachedImage;
+  if (obj == (id)[NSNull null]) {
+    // Not cached
+    NSAssert(FALSE, @"image not cached \"%@\"", nameNoSuffix);
+    return nil;
+  } else if (obj != nil) {
+    // already cached
+    return (UIImage*)obj;
   } else {
     // Not know to be an already decoded PNGSquared image, load via [UIImage imageNamed]
+    NSAssert(obj == nil, @"imageCache returned nil");
     
-    UIImage *systemImage = [self imageNamed2:name];
+    UIImage *systemImage = [self imageNamed2:nameNoSuffix];
     if (systemImage == nil) {
       return nil;
     }
@@ -84,45 +78,134 @@ static void *imageCacheDict = nil;
   NSAssert(cacheDict, @"setupAppInstance cacheDict argument is nil");
   imageCacheDict = (__bridge void*) cacheDict;
   [self swapStaticMethods:@selector(imageNamed:) sel2:@selector(imageNamed2:)];
+  
+  [self scanMainBundle];
+  
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    @autoreleasepool {
+      [self decodeAll];
+    }
+  });
 }
 
-+ (void) makeNotificationObserver
++ (void) clearCacheRef
 {
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(textureRenderThreadRenderAllReadyNotification:)
-                                               name:UIImagePNGSquaredAllReadyNotification
-                                             object:nil];
+  imageCacheDict = NULL;
 }
 
-// Delivered once all "fast" image decoding operations have been completed.
+// Scan all files in main bundle and looks for .png2 images that can be decompressed directly.
 
-+ (void) textureRenderThreadRenderAllReadyNotification:(NSNotification*)notification
++ (void) scanMainBundle
 {
-#if defined(DEBUG) || 1
-  NSLog(@"textureRenderThreadRenderAllReadyNotification in UIImage+PNGSquared");
-#endif // DEBUG
+  const BOOL debug = FALSE;
   
-  NSDictionary *cachedTable = [notification.userInfo objectForKey:@"cachedTable"];
-  NSAssert(cachedTable, @"cachedTable");
+  NSBundle *mainBundle = [NSBundle mainBundle];
   
-  for (NSString *prefix in cachedTable) {
-    // Set mapping "imageA" ->"/tmp/imageA@2x.png"
-
-    NSString *cachedPNGPath = [cachedTable objectForKey:prefix];
+  NSMutableDictionary *imageCache = (__bridge id) imageCacheDict;
+  NSAssert(imageCache, @"imageCache");
+  
+  NSArray *allPng2ImagePaths = [mainBundle pathsForResourcesOfType:@"png2" inDirectory:nil];
+  
+  for ( NSString *png2Path in allPng2ImagePaths ) {
+    //NSLog(@"png2Path \"%@\"", png2Path);
     
-#if defined(DEBUG)
-    NSLog(@"update cachedTable in textureRenderThreadRenderAllReadyNotification \"%@\" -> \"%@\"", prefix, cachedPNGPath);
-#endif // DEBUG
-
-    NSMutableDictionary *imageCache = (__bridge id) imageCacheDict;
-    [imageCache setObject:cachedPNGPath forKey:prefix];
+    // Grab just the path tail without the extension
+    NSString *pathTail = [png2Path lastPathComponent];
+    NSString *pathTailNoExtension = [pathTail stringByDeletingPathExtension];
+    
+    imageCache[pathTailNoExtension] = [NSNull null];
+    
+    if (debug) {
+      NSLog(@"png2 extension \"%@\"", pathTailNoExtension);
+    }
   }
   
-  // Deliver UIImagePNGSquaredAllReadyNotification now that cached files are known
+  return;
+}
+
+// Decompress all the indicated PNG2 images and cache them as decoded UIImage objects
+
++ (void) decodeAll
+{
+  const BOOL debug = FALSE;
   
-  [[NSNotificationCenter defaultCenter] postNotificationName:UIImagePNGSquaredAllReadyNotification
-                                                      object:self
-                                                    userInfo:nil];
+  __block NSMutableDictionary *mLoadedImagesDict = [NSMutableDictionary dictionary];
+
+  // Iterate over each image prefix and load
+  
+  NSMutableDictionary *imageCache = (__bridge id) imageCacheDict;
+  NSAssert(imageCache, @"imageCache");
+  
+  NSArray *allKeys = [NSArray arrayWithArray:imageCache.allKeys];
+
+  NSBundle *mainBundle = [NSBundle mainBundle];
+  
+  for ( NSString *prefix in allKeys ) {
+    if (debug) {
+      NSLog(@"prefix \"%@\"", prefix);
+    }
+    
+    NSString *fullPath = [mainBundle pathForResource:prefix ofType:@"png2"];
+    NSAssert(fullPath, @"fullPath");
+    
+    // Prefix like "name_gray" -> "name_gray.png2"
+    NSString *prefixWithPng2Ext = [fullPath lastPathComponent];
+  
+    // Kick off loading in this thread
+    
+    [PNGSquared decodePNG2:prefixWithPng2Ext bundle:mainBundle readyBlock:^(UIImage *img){
+      if (debug) {
+        NSLog(@"readyBlock");
+      }
+      
+      if (img == nil) {
+        NSLog(@"Failed to load \"%@\"", prefixWithPng2Ext);
+        NSAssert(FALSE, @"Failed to load \"%@\"", prefixWithPng2Ext);
+        return;
+      }
+      
+      @synchronized (mLoadedImagesDict) {
+        mLoadedImagesDict[prefix] = img;
+      }
+    }];
+    
+    // Wait for block to be invoked.
+    
+    while (1) {
+      NSString *obj = nil;
+      @synchronized (mLoadedImagesDict) {
+        obj = [mLoadedImagesDict objectForKey:prefix];
+      }
+      
+      if (obj == nil)
+      {
+        if (debug) {
+          NSLog(@"sleep");
+        }
+        [NSThread sleepForTimeInterval:0.01];
+      } else {
+        // Image loaded
+        if (debug) {
+          NSLog(@"image loaded \"%@\"", prefix);
+        }
+        break;
+      }
+    }
+  }
+  
+  // Add UIImage refs to cache
+  
+  for ( NSString * prefix in mLoadedImagesDict.allKeys ) {
+    imageCache[prefix] = mLoadedImagesDict[prefix];
+  }
+  
+  // Send notification on main thread
+  
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [[NSNotificationCenter defaultCenter] postNotificationName:UIImagePNGSquaredAllReadyNotification
+                                                        object:self
+                                                      userInfo:nil];
+  });
   
   return;
 }

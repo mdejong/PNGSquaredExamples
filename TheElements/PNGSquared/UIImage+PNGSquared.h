@@ -23,4 +23,6 @@
 
 + (void) setupAppInstance:(NSMutableDictionary*)cacheDict;
 
++ (void) clearCacheRef;
+
 @end
