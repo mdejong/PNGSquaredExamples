@@ -136,8 +136,6 @@
 		3C4A853D1B3E044C002C16E8 = {
 			isa = PBXGroup;
 			children = (
-				3CDFE7431D8F51980080C529 /* MobileCoreServices.framework */,
-				3CDFE7411D8F51920080C529 /* ImageIO.framework */,
 				3C4A85481B3E044C002C16E8 /* PNGSquaredCarousel */,
 				3C4A85471B3E044C002C16E8 /* Products */,
 			);
@@ -173,6 +171,8 @@
 		3C4A85491B3E044C002C16E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3CDFE7431D8F51980080C529 /* MobileCoreServices.framework */,
+				3CDFE7411D8F51920080C529 /* ImageIO.framework */,
 				3C4A85751B3E1C11002C16E8 /* PNG */,
 				3CDFE7251D8F4EAB0080C529 /* PNG2 */,
 				3C4A854A1B3E044C002C16E8 /* Info.plist */,
