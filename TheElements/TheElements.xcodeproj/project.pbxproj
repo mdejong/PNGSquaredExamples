@@ -12,6 +12,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		2883B6A10D944613003F08B5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2883B6A00D944613003F08B5 /* QuartzCore.framework */; };
+		3C1DC7441DA73A74009B19DC /* DecodedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1DC7421DA73A6B009B19DC /* DecodedDataProvider.m */; };
 		3CDA4D8F1B30BF48005722D2 /* Elements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8657C230D59017B00CB6FC9 /* Elements.plist */; };
 		3CDA4DA61B30BF48005722D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A3E90B16CD988E001BE75B /* Default-568h@2x.png */; };
 		3CDA4DA71B30BF48005722D2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A3E90C16CD988E001BE75B /* Default.png */; };
@@ -114,6 +115,8 @@
 		2883B6A00D944613003F08B5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* TheElements_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheElements_Prefix.pch; sourceTree = "<group>"; };
+		3C1DC7411DA73A6B009B19DC /* DecodedDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DecodedDataProvider.h; path = PNGSquared/DecodedDataProvider.h; sourceTree = "<group>"; };
+		3C1DC7421DA73A6B009B19DC /* DecodedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DecodedDataProvider.m; path = PNGSquared/DecodedDataProvider.m; sourceTree = "<group>"; };
 		3CDA4DC11B30BF48005722D2 /* TheElements2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheElements2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CDA4DC21B30BF48005722D2 /* Info2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info2.plist; path = /Users/modejong/Development/PNGSquared/ClientExampleCode/TheElements/Info2.plist; sourceTree = "<absolute>"; };
 		3CDA4DC71B30C163005722D2 /* dummy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = dummy.mm; path = PNGSquared/dummy.mm; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 			children = (
 				3CEA3A001B326270005183BA /* UIImage+PNGSquared.h */,
 				3CEA3A011B326270005183BA /* UIImage+PNGSquared.m */,
+				3C1DC7411DA73A6B009B19DC /* DecodedDataProvider.h */,
+				3C1DC7421DA73A6B009B19DC /* DecodedDataProvider.m */,
 				3CDA4DC71B30C163005722D2 /* dummy.mm */,
 				3CDA4DC81B30C163005722D2 /* PNGSquared.framework */,
 			);
@@ -675,6 +680,7 @@
 				3CEA3A031B326270005183BA /* UIImage+PNGSquared.m in Sources */,
 				3CDA4DB41B30BF48005722D2 /* ElementsTableViewController.m in Sources */,
 				3CDA4DB51B30BF48005722D2 /* AtomicElementViewController.m in Sources */,
+				3C1DC7441DA73A74009B19DC /* DecodedDataProvider.m in Sources */,
 				3CDA4DB61B30BF48005722D2 /* AtomicElementView.m in Sources */,
 				3CDA4DB71B30BF48005722D2 /* AtomicElementTileView.m in Sources */,
 				3CDA4DB81B30BF48005722D2 /* AtomicElementFlippedView.m in Sources */,

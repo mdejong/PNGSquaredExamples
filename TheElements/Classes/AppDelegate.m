@@ -112,6 +112,17 @@
   return YES;
 }
 
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+  // Drop refs to cached UIImage objects when a memory warning is delivered.
+  // Note that this logic does not deallocate the ref or remove the keys
+  // that indicate which images map to .png2 decode sources.
+  
+#if defined(PNGSQUARED)
+  [UIImage clearCache];
+#endif // PNGSQUARED
+}
+
 - (void) makeTabBar
 {
   // for each tableview 'screen' we need to create a datasource instance
@@ -165,7 +176,10 @@
   tabBarController.viewControllers = viewControllers;
 }
 
-// This notification is delivered after all PNGSquared encoded data has been converted to cached PNGs
+#if defined(PNGSQUARED)
+
+// This notification is delivered when the main bundle has been scanned and normal
+// PNG image loading from .png2 sources is ready to begin.
 
 - (void) allReadyNotification:(NSNotification*)notification
 {
@@ -186,6 +200,8 @@
   
   return;
 }
+
+#endif // PNGSQUARED
 
 @end
 
