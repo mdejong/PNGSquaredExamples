@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+
 @end
 
 @implementation ViewController
@@ -17,6 +19,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
+  
+  NSAssert(self.imageView, @"imageView");
 }
 
 - (void)didReceiveMemoryWarning {

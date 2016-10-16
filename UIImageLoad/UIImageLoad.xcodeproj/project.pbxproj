@@ -13,6 +13,7 @@
 		3C08BA541DB42DDB00ADA0F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA521DB42DDB00ADA0F1 /* Main.storyboard */; };
 		3C08BA561DB42DDB00ADA0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA551DB42DDB00ADA0F1 /* Assets.xcassets */; };
 		3C08BA591DB42DDB00ADA0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA571DB42DDB00ADA0F1 /* LaunchScreen.storyboard */; };
+		3C9FD1E51DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9FD1E31DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		3C08BA551DB42DDB00ADA0F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C08BA581DB42DDB00ADA0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C08BA5A1DB42DDB00ADA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C9FD1E31DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SuperMarioRun_icon_fs_2048.png; sourceTree = "<group>"; };
+		3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMarioRun_icon_fs_2048.png2; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 		3C08BA491DB42DDB00ADA0F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C9FD1E31DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png */,
+				3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */,
 				3C08BA4A1DB42DDB00ADA0F1 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +143,7 @@
 			files = (
 				3C08BA591DB42DDB00ADA0F1 /* LaunchScreen.storyboard in Resources */,
 				3C08BA561DB42DDB00ADA0F1 /* Assets.xcassets in Resources */,
+				3C9FD1E51DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png in Resources */,
 				3C08BA541DB42DDB00ADA0F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +310,7 @@
 				3C08BA5F1DB42DDB00ADA0F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
