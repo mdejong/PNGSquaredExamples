@@ -8,7 +8,11 @@
 //  objects in the indicated NSMutableDictionary so that another call
 //  to load the same image by name will get the cached image object.
 
+#import <Foundation/Foundation.h>
+
 #import <CoreGraphics/CoreGraphics.h>
+
+#import <UIKit/UIKit.h>
 
 @interface DecodedDataProvider : NSObject
 

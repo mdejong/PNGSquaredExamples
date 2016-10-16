@@ -14,6 +14,17 @@
 		3C08BA561DB42DDB00ADA0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA551DB42DDB00ADA0F1 /* Assets.xcassets */; };
 		3C08BA591DB42DDB00ADA0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA571DB42DDB00ADA0F1 /* LaunchScreen.storyboard */; };
 		3C9FD1E51DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9FD1E31DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png */; };
+		3C9FD1E91DB432B60069F5A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C08BA501DB42DDB00ADA0F1 /* ViewController.m */; };
+		3C9FD1EA1DB432B60069F5A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C08BA4D1DB42DDB00ADA0F1 /* AppDelegate.m */; };
+		3C9FD1EB1DB432B60069F5A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C08BA4A1DB42DDB00ADA0F1 /* main.m */; };
+		3C9FD1EE1DB432B60069F5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA571DB42DDB00ADA0F1 /* LaunchScreen.storyboard */; };
+		3C9FD1EF1DB432B60069F5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA551DB42DDB00ADA0F1 /* Assets.xcassets */; };
+		3C9FD1F11DB432B60069F5A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA521DB42DDB00ADA0F1 /* Main.storyboard */; };
+		3CFA7DAE1DB4362F007354EE /* SuperMarioRun_icon_fs_2048.png2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */; };
+		3CFA7DBA1DB436C0007354EE /* DecodedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB11DB436AF007354EE /* DecodedDataProvider.m */; };
+		3CFA7DBB1DB436C4007354EE /* dummy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB21DB436AF007354EE /* dummy.mm */; };
+		3CFA7DBC1DB436D3007354EE /* PNGSquared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFA7DB31DB436AF007354EE /* PNGSquared.framework */; };
+		3CFA7DBD1DB436D9007354EE /* UIImage+PNGSquared.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB51DB436AF007354EE /* UIImage+PNGSquared.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +40,14 @@
 		3C08BA5A1DB42DDB00ADA0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C9FD1E31DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SuperMarioRun_icon_fs_2048.png; sourceTree = "<group>"; };
 		3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMarioRun_icon_fs_2048.png2; sourceTree = "<group>"; };
+		3C9FD1F51DB432B60069F5A2 /* UIImageLoad2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIImageLoad2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C9FD1F61DB432B60069F5A2 /* Info2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info2.plist; path = /Users/modejong/Development/PNGSquared/PublicGithub/PNGSquaredExamples/UIImageLoad/Info2.plist; sourceTree = "<absolute>"; };
+		3CFA7DB01DB436AF007354EE /* DecodedDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecodedDataProvider.h; sourceTree = "<group>"; };
+		3CFA7DB11DB436AF007354EE /* DecodedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecodedDataProvider.m; sourceTree = "<group>"; };
+		3CFA7DB21DB436AF007354EE /* dummy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dummy.mm; sourceTree = "<group>"; };
+		3CFA7DB31DB436AF007354EE /* PNGSquared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PNGSquared.framework; sourceTree = "<group>"; };
+		3CFA7DB41DB436AF007354EE /* UIImage+PNGSquared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PNGSquared.h"; sourceTree = "<group>"; };
+		3CFA7DB51DB436AF007354EE /* UIImage+PNGSquared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PNGSquared.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +55,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C9FD1EC1DB432B60069F5A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CFA7DBC1DB436D3007354EE /* PNGSquared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				3C08BA461DB42DDB00ADA0F1 /* UIImageLoad.app */,
+				3C9FD1F51DB432B60069F5A2 /* UIImageLoad2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +97,8 @@
 				3C08BA551DB42DDB00ADA0F1 /* Assets.xcassets */,
 				3C08BA571DB42DDB00ADA0F1 /* LaunchScreen.storyboard */,
 				3C08BA5A1DB42DDB00ADA0F1 /* Info.plist */,
+				3C9FD1F61DB432B60069F5A2 /* Info2.plist */,
+				3CFA7DAF1DB436AF007354EE /* PNGSquared */,
 				3C08BA491DB42DDB00ADA0F1 /* Supporting Files */,
 			);
 			path = UIImageLoad;
@@ -82,6 +112,19 @@
 				3C08BA4A1DB42DDB00ADA0F1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3CFA7DAF1DB436AF007354EE /* PNGSquared */ = {
+			isa = PBXGroup;
+			children = (
+				3CFA7DB01DB436AF007354EE /* DecodedDataProvider.h */,
+				3CFA7DB11DB436AF007354EE /* DecodedDataProvider.m */,
+				3CFA7DB21DB436AF007354EE /* dummy.mm */,
+				3CFA7DB31DB436AF007354EE /* PNGSquared.framework */,
+				3CFA7DB41DB436AF007354EE /* UIImage+PNGSquared.h */,
+				3CFA7DB51DB436AF007354EE /* UIImage+PNGSquared.m */,
+			);
+			path = PNGSquared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +145,23 @@
 			name = UIImageLoad;
 			productName = UIImageLoad;
 			productReference = 3C08BA461DB42DDB00ADA0F1 /* UIImageLoad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3C9FD1E71DB432B60069F5A2 /* UIImageLoad2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C9FD1F21DB432B60069F5A2 /* Build configuration list for PBXNativeTarget "UIImageLoad2" */;
+			buildPhases = (
+				3C9FD1E81DB432B60069F5A2 /* Sources */,
+				3C9FD1EC1DB432B60069F5A2 /* Frameworks */,
+				3C9FD1ED1DB432B60069F5A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIImageLoad2;
+			productName = UIImageLoad;
+			productReference = 3C9FD1F51DB432B60069F5A2 /* UIImageLoad2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,6 +192,7 @@
 			projectRoot = "";
 			targets = (
 				3C08BA451DB42DDB00ADA0F1 /* UIImageLoad */,
+				3C9FD1E71DB432B60069F5A2 /* UIImageLoad2 */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +209,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C9FD1ED1DB432B60069F5A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C9FD1EE1DB432B60069F5A2 /* LaunchScreen.storyboard in Resources */,
+				3CFA7DAE1DB4362F007354EE /* SuperMarioRun_icon_fs_2048.png2 in Resources */,
+				3C9FD1EF1DB432B60069F5A2 /* Assets.xcassets in Resources */,
+				3C9FD1F11DB432B60069F5A2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -158,6 +230,19 @@
 				3C08BA511DB42DDB00ADA0F1 /* ViewController.m in Sources */,
 				3C08BA4E1DB42DDB00ADA0F1 /* AppDelegate.m in Sources */,
 				3C08BA4B1DB42DDB00ADA0F1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C9FD1E81DB432B60069F5A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C9FD1E91DB432B60069F5A2 /* ViewController.m in Sources */,
+				3CFA7DBB1DB436C4007354EE /* dummy.mm in Sources */,
+				3CFA7DBA1DB436C0007354EE /* DecodedDataProvider.m in Sources */,
+				3CFA7DBD1DB436D9007354EE /* UIImage+PNGSquared.m in Sources */,
+				3C9FD1EA1DB432B60069F5A2 /* AppDelegate.m in Sources */,
+				3C9FD1EB1DB432B60069F5A2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +356,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UIImageLoad/PNGSquared",
+				);
 				INFOPLIST_FILE = UIImageLoad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -283,10 +372,48 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_NS_ASSERTIONS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UIImageLoad/PNGSquared",
+				);
 				INFOPLIST_FILE = UIImageLoad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.UIImageLoad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3C9FD1F31DB432B60069F5A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UIImageLoad/PNGSquared",
+				);
+				INFOPLIST_FILE = Info2.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.UIImageLoad2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3C9FD1F41DB432B60069F5A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_NS_ASSERTIONS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UIImageLoad/PNGSquared",
+				);
+				INFOPLIST_FILE = Info2.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.UIImageLoad2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -308,6 +435,15 @@
 			buildConfigurations = (
 				3C08BA5E1DB42DDB00ADA0F1 /* Debug */,
 				3C08BA5F1DB42DDB00ADA0F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C9FD1F21DB432B60069F5A2 /* Build configuration list for PBXNativeTarget "UIImageLoad2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C9FD1F31DB432B60069F5A2 /* Debug */,
+				3C9FD1F41DB432B60069F5A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
