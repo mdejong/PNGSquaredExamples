@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   NSAssert(self.imageView, @"imageView");
+  
+#if defined(PNGSQUARED)
+  // Explicitly load image
+  self.imageView.image = [UIImage imageNamed:@"SuperMarioRun_icon_fs_2048"];
+#endif // PNGSQUARED
+
 }
 
 - (void)didReceiveMemoryWarning {
