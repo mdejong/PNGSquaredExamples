@@ -54,6 +54,15 @@
 
 #if defined(PNGSQUARED)
 
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+  // Drop refs to cached UIImage objects when a memory warning is delivered.
+  // Note that this logic does not deallocate the ref or remove the keys
+  // that indicate which images map to .png2 decode sources.
+  
+  [UIImage clearCache];
+}
+
 // This notification is delivered when the main bundle has been scanned and normal
 // PNG image loading from .png2 sources is ready to begin.
 
