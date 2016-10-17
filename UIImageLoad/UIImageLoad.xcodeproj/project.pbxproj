@@ -25,6 +25,7 @@
 		3CFA7DBB1DB436C4007354EE /* dummy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB21DB436AF007354EE /* dummy.mm */; };
 		3CFA7DBC1DB436D3007354EE /* PNGSquared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFA7DB31DB436AF007354EE /* PNGSquared.framework */; };
 		3CFA7DBD1DB436D9007354EE /* UIImage+PNGSquared.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB51DB436AF007354EE /* UIImage+PNGSquared.m */; };
+		3CFA7DC31DB59B55007354EE /* Info2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CFA7DC21DB59B55007354EE /* Info2.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,13 +42,13 @@
 		3C9FD1E31DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SuperMarioRun_icon_fs_2048.png; sourceTree = "<group>"; };
 		3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMarioRun_icon_fs_2048.png2; sourceTree = "<group>"; };
 		3C9FD1F51DB432B60069F5A2 /* UIImageLoad2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIImageLoad2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C9FD1F61DB432B60069F5A2 /* Info2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info2.plist; path = /Users/modejong/Development/PNGSquared/PublicGithub/PNGSquaredExamples/UIImageLoad/Info2.plist; sourceTree = "<absolute>"; };
 		3CFA7DB01DB436AF007354EE /* DecodedDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecodedDataProvider.h; sourceTree = "<group>"; };
 		3CFA7DB11DB436AF007354EE /* DecodedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecodedDataProvider.m; sourceTree = "<group>"; };
 		3CFA7DB21DB436AF007354EE /* dummy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dummy.mm; sourceTree = "<group>"; };
 		3CFA7DB31DB436AF007354EE /* PNGSquared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PNGSquared.framework; sourceTree = "<group>"; };
 		3CFA7DB41DB436AF007354EE /* UIImage+PNGSquared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PNGSquared.h"; sourceTree = "<group>"; };
 		3CFA7DB51DB436AF007354EE /* UIImage+PNGSquared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PNGSquared.m"; sourceTree = "<group>"; };
+		3CFA7DC21DB59B55007354EE /* Info2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info2.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +98,7 @@
 				3C08BA551DB42DDB00ADA0F1 /* Assets.xcassets */,
 				3C08BA571DB42DDB00ADA0F1 /* LaunchScreen.storyboard */,
 				3C08BA5A1DB42DDB00ADA0F1 /* Info.plist */,
-				3C9FD1F61DB432B60069F5A2 /* Info2.plist */,
+				3CFA7DC21DB59B55007354EE /* Info2.plist */,
 				3CFA7DAF1DB436AF007354EE /* PNGSquared */,
 				3C08BA491DB42DDB00ADA0F1 /* Supporting Files */,
 			);
@@ -206,6 +207,7 @@
 				3C08BA561DB42DDB00ADA0F1 /* Assets.xcassets in Resources */,
 				3C9FD1E51DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png in Resources */,
 				3C08BA541DB42DDB00ADA0F1 /* Main.storyboard in Resources */,
+				3CFA7DC31DB59B55007354EE /* Info2.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +395,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/UIImageLoad/PNGSquared",
 				);
-				INFOPLIST_FILE = Info2.plist;
+				INFOPLIST_FILE = UIImageLoad/Info2.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "-DPNGSQUARED=1";
@@ -411,7 +413,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/UIImageLoad/PNGSquared",
 				);
-				INFOPLIST_FILE = Info2.plist;
+				INFOPLIST_FILE = UIImageLoad/Info2.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "-DPNGSQUARED=1";

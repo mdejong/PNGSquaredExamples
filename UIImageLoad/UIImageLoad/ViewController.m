@@ -24,6 +24,16 @@
   // Explicitly load image
   self.imageView.image = [UIImage imageNamed:@"SuperMarioRun_icon_fs_2048"];
 #endif // PNGSQUARED
+  
+  // Cycle background color
+  
+  self.view.backgroundColor = [UIColor redColor];
+  [UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:5.0];
+  [UIView setAnimationRepeatCount:3.5];
+  [UIView setAnimationRepeatAutoreverses:TRUE];
+  self.view.backgroundColor = [UIColor blackColor];
+  [UIView commitAnimations];
 }
 
 - (void)didReceiveMemoryWarning {
