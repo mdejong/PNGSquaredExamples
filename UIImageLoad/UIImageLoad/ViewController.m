@@ -12,9 +12,7 @@
 #import "ViewController.h"
 
 #if defined(PNGSQUARED)
-@import CoreGraphics;
 @import ImageIO;
-@import QuartzCore;
 @import MobileCoreServices;
 @import PNGSquared;
 #endif // PNGSQUARED
