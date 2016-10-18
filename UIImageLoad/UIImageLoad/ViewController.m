@@ -8,9 +8,17 @@
 
 #import "ViewController.h"
 
+@import AVFoundation;
+
+#define ENABLE_SOUND
+
 @interface ViewController ()
 
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+
+// Audio clip player
+
+@property (nonatomic, retain) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -34,6 +42,19 @@
   [UIView setAnimationRepeatAutoreverses:TRUE];
   self.view.backgroundColor = [UIColor blackColor];
   [UIView commitAnimations];
+  
+#ifdef ENABLE_SOUND
+  // Intro audio clip
+  
+  NSString *resFilename = @"sm64_mario_its_me.wav";
+  NSString* resPath = [[NSBundle mainBundle] pathForResource:resFilename ofType:nil];
+  NSAssert(resPath, @"resPath is nil");
+  NSURL *url = [NSURL fileURLWithPath:resPath];
+  AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+  self.audioPlayer = player;
+
+  [player play];
+#endif
 }
 
 - (void)didReceiveMemoryWarning {

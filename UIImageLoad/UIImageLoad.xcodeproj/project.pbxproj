@@ -20,6 +20,8 @@
 		3C9FD1EE1DB432B60069F5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA571DB42DDB00ADA0F1 /* LaunchScreen.storyboard */; };
 		3C9FD1EF1DB432B60069F5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA551DB42DDB00ADA0F1 /* Assets.xcassets */; };
 		3C9FD1F11DB432B60069F5A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C08BA521DB42DDB00ADA0F1 /* Main.storyboard */; };
+		3CE8602F1DB5C21100B641E7 /* sm64_mario_its_me.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3CE8602E1DB5C21100B641E7 /* sm64_mario_its_me.wav */; };
+		3CE860301DB5C21700B641E7 /* sm64_mario_its_me.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3CE8602E1DB5C21100B641E7 /* sm64_mario_its_me.wav */; };
 		3CFA7DAE1DB4362F007354EE /* SuperMarioRun_icon_fs_2048.png2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */; };
 		3CFA7DBA1DB436C0007354EE /* DecodedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB11DB436AF007354EE /* DecodedDataProvider.m */; };
 		3CFA7DBB1DB436C4007354EE /* dummy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB21DB436AF007354EE /* dummy.mm */; };
@@ -42,6 +44,7 @@
 		3C9FD1E31DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SuperMarioRun_icon_fs_2048.png; sourceTree = "<group>"; };
 		3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMarioRun_icon_fs_2048.png2; sourceTree = "<group>"; };
 		3C9FD1F51DB432B60069F5A2 /* UIImageLoad2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIImageLoad2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CE8602E1DB5C21100B641E7 /* sm64_mario_its_me.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sm64_mario_its_me.wav; sourceTree = "<group>"; };
 		3CFA7DB01DB436AF007354EE /* DecodedDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecodedDataProvider.h; sourceTree = "<group>"; };
 		3CFA7DB11DB436AF007354EE /* DecodedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecodedDataProvider.m; sourceTree = "<group>"; };
 		3CFA7DB21DB436AF007354EE /* dummy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dummy.mm; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 			children = (
 				3C9FD1E31DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png */,
 				3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */,
+				3CE8602E1DB5C21100B641E7 /* sm64_mario_its_me.wav */,
 				3C08BA4A1DB42DDB00ADA0F1 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -203,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE8602F1DB5C21100B641E7 /* sm64_mario_its_me.wav in Resources */,
 				3C08BA591DB42DDB00ADA0F1 /* LaunchScreen.storyboard in Resources */,
 				3C08BA561DB42DDB00ADA0F1 /* Assets.xcassets in Resources */,
 				3C9FD1E51DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png in Resources */,
@@ -217,6 +222,7 @@
 			files = (
 				3C9FD1EE1DB432B60069F5A2 /* LaunchScreen.storyboard in Resources */,
 				3CFA7DAE1DB4362F007354EE /* SuperMarioRun_icon_fs_2048.png2 in Resources */,
+				3CE860301DB5C21700B641E7 /* sm64_mario_its_me.wav in Resources */,
 				3C9FD1EF1DB432B60069F5A2 /* Assets.xcassets in Resources */,
 				3C9FD1F11DB432B60069F5A2 /* Main.storyboard in Resources */,
 			);
