@@ -8,25 +8,7 @@
 
 #import "AppDelegate.h"
 
-#if defined(PNGSQUARED)
-@import CoreGraphics;
-@import ImageIO;
-@import QuartzCore;
-@import MobileCoreServices;
-
-@import PNGSquared;
-#import "UIImage+PNGSquared.h"
-#endif // PNGSQUARED
-
 @interface AppDelegate ()
-
-#if defined(PNGSQUARED)
-// A ref counted dictionary is required to hold active refs to UIImage objects
-// cached by the custom UIImage overloaded methods.
-
-@property (nonatomic, retain) NSMutableDictionary *imageCache;
-
-#endif // PNGSQUARED
 
 @end
 
@@ -34,17 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
-  
-#if defined(PNGSQUARED)
-  // Invoke setup method to swap in custom impl of [UIImage imageNamed:]
-  
-  self.imageCache = [NSMutableDictionary dictionary];
-  [UIImage setupAppInstance:self.imageCache];
-#else
-  // nop
-#endif // PNGSQUARED
-  
+  // Override point for customization after application launch.  
   return YES;
 }
 

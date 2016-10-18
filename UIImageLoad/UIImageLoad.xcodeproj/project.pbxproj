@@ -23,10 +23,8 @@
 		3CE8602F1DB5C21100B641E7 /* sm64_mario_its_me.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3CE8602E1DB5C21100B641E7 /* sm64_mario_its_me.wav */; };
 		3CE860301DB5C21700B641E7 /* sm64_mario_its_me.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3CE8602E1DB5C21100B641E7 /* sm64_mario_its_me.wav */; };
 		3CFA7DAE1DB4362F007354EE /* SuperMarioRun_icon_fs_2048.png2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */; };
-		3CFA7DBA1DB436C0007354EE /* DecodedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB11DB436AF007354EE /* DecodedDataProvider.m */; };
 		3CFA7DBB1DB436C4007354EE /* dummy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB21DB436AF007354EE /* dummy.mm */; };
 		3CFA7DBC1DB436D3007354EE /* PNGSquared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFA7DB31DB436AF007354EE /* PNGSquared.framework */; };
-		3CFA7DBD1DB436D9007354EE /* UIImage+PNGSquared.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA7DB51DB436AF007354EE /* UIImage+PNGSquared.m */; };
 		3CFA7DC31DB59B55007354EE /* Info2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CFA7DC21DB59B55007354EE /* Info2.plist */; };
 /* End PBXBuildFile section */
 
@@ -45,12 +43,8 @@
 		3C9FD1E41DB430660069F5A2 /* SuperMarioRun_icon_fs_2048.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMarioRun_icon_fs_2048.png2; sourceTree = "<group>"; };
 		3C9FD1F51DB432B60069F5A2 /* UIImageLoad2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIImageLoad2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE8602E1DB5C21100B641E7 /* sm64_mario_its_me.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sm64_mario_its_me.wav; sourceTree = "<group>"; };
-		3CFA7DB01DB436AF007354EE /* DecodedDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecodedDataProvider.h; sourceTree = "<group>"; };
-		3CFA7DB11DB436AF007354EE /* DecodedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecodedDataProvider.m; sourceTree = "<group>"; };
 		3CFA7DB21DB436AF007354EE /* dummy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dummy.mm; sourceTree = "<group>"; };
 		3CFA7DB31DB436AF007354EE /* PNGSquared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PNGSquared.framework; sourceTree = "<group>"; };
-		3CFA7DB41DB436AF007354EE /* UIImage+PNGSquared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PNGSquared.h"; sourceTree = "<group>"; };
-		3CFA7DB51DB436AF007354EE /* UIImage+PNGSquared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PNGSquared.m"; sourceTree = "<group>"; };
 		3CFA7DC21DB59B55007354EE /* Info2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info2.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,12 +116,8 @@
 		3CFA7DAF1DB436AF007354EE /* PNGSquared */ = {
 			isa = PBXGroup;
 			children = (
-				3CFA7DB01DB436AF007354EE /* DecodedDataProvider.h */,
-				3CFA7DB11DB436AF007354EE /* DecodedDataProvider.m */,
 				3CFA7DB21DB436AF007354EE /* dummy.mm */,
 				3CFA7DB31DB436AF007354EE /* PNGSquared.framework */,
-				3CFA7DB41DB436AF007354EE /* UIImage+PNGSquared.h */,
-				3CFA7DB51DB436AF007354EE /* UIImage+PNGSquared.m */,
 			);
 			path = PNGSquared;
 			sourceTree = "<group>";
@@ -247,8 +237,6 @@
 			files = (
 				3C9FD1E91DB432B60069F5A2 /* ViewController.m in Sources */,
 				3CFA7DBB1DB436C4007354EE /* dummy.mm in Sources */,
-				3CFA7DBA1DB436C0007354EE /* DecodedDataProvider.m in Sources */,
-				3CFA7DBD1DB436D9007354EE /* UIImage+PNGSquared.m in Sources */,
 				3C9FD1EA1DB432B60069F5A2 /* AppDelegate.m in Sources */,
 				3C9FD1EB1DB432B60069F5A2 /* main.m in Sources */,
 			);

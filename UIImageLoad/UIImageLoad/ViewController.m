@@ -3,14 +3,20 @@
 //  UIImageLoad
 //
 //  Created by Mo DeJong on 10/16/16.
-//  Copyright © 2016 HelpURock. All rights reserved.
 //
+//  Trivial loading logic that shows a PNG and plays a sound. When compiled
+//  with the target "UIImageLoad" the original PNG is loaded from an app resoruce.
+//  When compiled with the "UIImageLoad2" target, the original PNG is not included
+//  and a 3x smaller .png2 file is decompressed instead.
 
 #import "ViewController.h"
 
 #if defined(PNGSQUARED)
+@import CoreGraphics;
+@import ImageIO;
+@import QuartzCore;
+@import MobileCoreServices;
 @import PNGSquared;
-#import "UIImage+PNGSquared.h"
 #endif // PNGSQUARED
 
 @import AVFoundation;
@@ -32,15 +38,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   NSAssert(self.imageView, @"imageView");
-  
-#if defined(PNGSQUARED)
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(allReadyNotification:)
-                                               name:UIImagePNGSquaredAllReadyNotification
-                                             object:nil];
-#else
-  // nop
-#endif // PNGSQUARED
   
   // Cycle background color
   
@@ -64,41 +61,21 @@
 
   [player play];
 #endif
-}
-
-
+  
+  // When using PNGSQUARED the original PNG cannot be loaded from the storyboard.
+  // Invoke async block based API to load and then set the UIImageView.image property.
+  
 #if defined(PNGSQUARED)
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  
-  // Drop refs to cached UIImage objects when a memory warning is delivered.
-  // Note that this logic does not deallocate the ref or remove the keys
-  // that indicate which images map to .png2 decode sources.
-  
-  [UIImage clearCache];
-}
-
-// This notification is delivered when the main bundle has been scanned and normal
-// PNG image loading from .png2 sources is ready to begin.
-
-- (void) allReadyNotification:(NSNotification*)notification
-{
-#if defined(DEBUG)
-  NSLog(@"allReadyNotification");
-#endif // DEBUG
-  
-  // Explicitly load image
-  
-  self.imageView.image = [UIImage imageNamed:@"SuperMarioRun_icon_fs_2048"];
-  
-  [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                  name:UIImagePNGSquaredAllReadyNotification
-                                                object:nil];
-  
-  return;
-}
-
+  {
+    NSString *resFilename = @"SuperMarioRun_icon_fs_2048.png2";
+    [PNGSquared decodePNG2:resFilename
+                    bundle:nil
+                readyBlock:^(UIImage *img){
+                  NSAssert(img, @"could not load \"%@\"", resFilename);
+                  self.imageView.image = img;
+                }];
+  }
 #endif // PNGSQUARED
+}
 
 @end
