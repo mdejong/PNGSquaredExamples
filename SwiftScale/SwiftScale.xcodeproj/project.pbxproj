@@ -15,15 +15,18 @@
 		3C02A4181DB8ADB5004BEFFD /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C02A4151DB8ADB5004BEFFD /* one.png */; };
 		3C02A4191DB8ADB5004BEFFD /* one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C02A4161DB8ADB5004BEFFD /* one@2x.png */; };
 		3C02A41A1DB8ADB5004BEFFD /* one@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C02A4171DB8ADB5004BEFFD /* one@3x.png */; };
-		3C08D6851DB943B300527F0D /* Info2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C08D6841DB943B300527F0D /* Info2.plist */; };
 		3C22ED151DB9433800970218 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02A4051DB8AD33004BEFFD /* ViewController.swift */; };
 		3C22ED161DB9433800970218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C02A4031DB8AD33004BEFFD /* AppDelegate.swift */; };
-		3C22ED191DB9433800970218 /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C02A4151DB8ADB5004BEFFD /* one.png */; };
 		3C22ED1A1DB9433800970218 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C02A40C1DB8AD33004BEFFD /* LaunchScreen.storyboard */; };
-		3C22ED1B1DB9433800970218 /* one@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C02A4171DB8ADB5004BEFFD /* one@3x.png */; };
 		3C22ED1C1DB9433800970218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C02A40A1DB8AD33004BEFFD /* Assets.xcassets */; };
-		3C22ED1D1DB9433800970218 /* one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C02A4161DB8ADB5004BEFFD /* one@2x.png */; };
 		3C22ED1E1DB9433800970218 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C02A4071DB8AD33004BEFFD /* Main.storyboard */; };
+		3CF330621DB9458D0043135A /* one.png2 in Resources */ = {isa = PBXBuildFile; fileRef = 3CF3305C1DB9457E0043135A /* one.png2 */; };
+		3CF330631DB9458D0043135A /* one@2x.png2 in Resources */ = {isa = PBXBuildFile; fileRef = 3CF3305D1DB9457E0043135A /* one@2x.png2 */; };
+		3CF330641DB9458D0043135A /* one@3x.png2 in Resources */ = {isa = PBXBuildFile; fileRef = 3CF3305E1DB9457E0043135A /* one@3x.png2 */; };
+		3CF330701DB9498A0043135A /* UIImage+PNGSquared.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3306B1DB948D70043135A /* UIImage+PNGSquared.m */; };
+		3CF330711DB9498F0043135A /* DecodedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF330671DB948D70043135A /* DecodedDataProvider.m */; };
+		3CF330721DB949930043135A /* dummy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CF330681DB948D70043135A /* dummy.mm */; };
+		3CF330731DB949980043135A /* PNGSquared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF330691DB948D70043135A /* PNGSquared.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,16 @@
 		3C02A4171DB8ADB5004BEFFD /* one@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "one@3x.png"; sourceTree = "<group>"; };
 		3C08D6841DB943B300527F0D /* Info2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info2.plist; sourceTree = "<group>"; };
 		3C22ED221DB9433800970218 /* SwiftScale2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftScale2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF3305C1DB9457E0043135A /* one.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = one.png2; sourceTree = "<group>"; };
+		3CF3305D1DB9457E0043135A /* one@2x.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "one@2x.png2"; sourceTree = "<group>"; };
+		3CF3305E1DB9457E0043135A /* one@3x.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "one@3x.png2"; sourceTree = "<group>"; };
+		3CF330661DB948D70043135A /* DecodedDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecodedDataProvider.h; sourceTree = "<group>"; };
+		3CF330671DB948D70043135A /* DecodedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecodedDataProvider.m; sourceTree = "<group>"; };
+		3CF330681DB948D70043135A /* dummy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dummy.mm; sourceTree = "<group>"; };
+		3CF330691DB948D70043135A /* PNGSquared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PNGSquared.framework; sourceTree = "<group>"; };
+		3CF3306A1DB948D70043135A /* UIImage+PNGSquared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PNGSquared.h"; sourceTree = "<group>"; };
+		3CF3306B1DB948D70043135A /* UIImage+PNGSquared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PNGSquared.m"; sourceTree = "<group>"; };
+		3CF330741DB94B190043135A /* PNGSquaredBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGSquaredBridgingHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF330731DB949980043135A /* PNGSquared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,8 +103,26 @@
 				3C02A4151DB8ADB5004BEFFD /* one.png */,
 				3C02A4161DB8ADB5004BEFFD /* one@2x.png */,
 				3C02A4171DB8ADB5004BEFFD /* one@3x.png */,
+				3CF3305C1DB9457E0043135A /* one.png2 */,
+				3CF3305D1DB9457E0043135A /* one@2x.png2 */,
+				3CF3305E1DB9457E0043135A /* one@3x.png2 */,
+				3CF330651DB948D70043135A /* PNGSquared */,
 			);
 			path = SwiftScale;
+			sourceTree = "<group>";
+		};
+		3CF330651DB948D70043135A /* PNGSquared */ = {
+			isa = PBXGroup;
+			children = (
+				3CF3306A1DB948D70043135A /* UIImage+PNGSquared.h */,
+				3CF3306B1DB948D70043135A /* UIImage+PNGSquared.m */,
+				3CF330661DB948D70043135A /* DecodedDataProvider.h */,
+				3CF330671DB948D70043135A /* DecodedDataProvider.m */,
+				3CF330681DB948D70043135A /* dummy.mm */,
+				3CF330741DB94B190043135A /* PNGSquaredBridgingHeader.h */,
+				3CF330691DB948D70043135A /* PNGSquared.framework */,
+			);
+			path = PNGSquared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C02A4181DB8ADB5004BEFFD /* one.png in Resources */,
-				3C08D6851DB943B300527F0D /* Info2.plist in Resources */,
 				3C02A40E1DB8AD33004BEFFD /* LaunchScreen.storyboard in Resources */,
 				3C02A41A1DB8ADB5004BEFFD /* one@3x.png in Resources */,
 				3C02A40B1DB8AD33004BEFFD /* Assets.xcassets in Resources */,
@@ -183,12 +214,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C22ED191DB9433800970218 /* one.png in Resources */,
 				3C22ED1A1DB9433800970218 /* LaunchScreen.storyboard in Resources */,
-				3C22ED1B1DB9433800970218 /* one@3x.png in Resources */,
 				3C22ED1C1DB9433800970218 /* Assets.xcassets in Resources */,
-				3C22ED1D1DB9433800970218 /* one@2x.png in Resources */,
 				3C22ED1E1DB9433800970218 /* Main.storyboard in Resources */,
+				3CF330641DB9458D0043135A /* one@3x.png2 in Resources */,
+				3CF330631DB9458D0043135A /* one@2x.png2 in Resources */,
+				3CF330621DB9458D0043135A /* one.png2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF330701DB9498A0043135A /* UIImage+PNGSquared.m in Sources */,
+				3CF330721DB949930043135A /* dummy.mm in Sources */,
+				3CF330711DB9498F0043135A /* DecodedDataProvider.m in Sources */,
 				3C22ED151DB9433800970218 /* ViewController.swift in Sources */,
 				3C22ED161DB9433800970218 /* AppDelegate.swift in Sources */,
 			);
@@ -324,6 +358,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftScale/PNGSquared",
+				);
 				INFOPLIST_FILE = SwiftScale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.SwiftScale;
@@ -336,6 +374,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftScale/PNGSquared",
+				);
 				INFOPLIST_FILE = SwiftScale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.SwiftScale;
@@ -348,10 +390,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftScale/PNGSquared",
+				);
 				INFOPLIST_FILE = SwiftScale/Info2.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.SwiftScale;
+				OTHER_SWIFT_FLAGS = "-D PNGSQUARED";
+				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.SwiftScale2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SwiftScale/PNGSquared/PNGSquaredBridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -360,10 +408,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftScale/PNGSquared",
+				);
 				INFOPLIST_FILE = SwiftScale/Info2.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.SwiftScale;
+				OTHER_SWIFT_FLAGS = "-D PNGSQUARED";
+				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.SwiftScale2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SwiftScale/PNGSquared/PNGSquaredBridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

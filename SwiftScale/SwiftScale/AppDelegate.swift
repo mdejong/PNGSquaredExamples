@@ -8,14 +8,26 @@
 
 import UIKit
 
+// Note that PNGSquaredBridgingHeader.h is set under "Swift Compiler" -> "Objective-C Bridging Header"
+// and this bridging header imports modules that link PNGSquared and the UIImage overload
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  var imageCache: NSMutableDictionary?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
+#if PNGSQUARED
+    // Invoke setup method to swap in custom impl of [UIImage imageNamed:]
+    self.imageCache = NSMutableDictionary()
+    UIImage.setupAppInstance(self.imageCache)
+#else
+#endif
+    
     return true
   }
 
