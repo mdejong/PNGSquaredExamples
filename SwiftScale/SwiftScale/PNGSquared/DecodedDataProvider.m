@@ -15,6 +15,8 @@
 
 @property (nonatomic, copy) NSString *imagePrefix;
 
+@property (nonatomic, copy) NSString *resolvedFilename;
+
 @property (nonatomic, retain) NSBundle *bundle;
 
 @property (nonatomic, retain) UIImage *backingImg;
@@ -60,7 +62,9 @@ const void * getBytePointerCallback(void *info)
       NSLog(@"getBytePointerCallback (not cached) %p", info);
     }
     
-    NSString *png2Prefix = provider.imagePrefix;
+    NSString *prefix = provider.imagePrefix;
+    NSString *png2Prefix = [provider.resolvedFilename lastPathComponent];
+    
     NSBundle *bundle = provider.bundle;
     NSDictionary *dict = [PNGSquared blockingDecodePNG2:png2Prefix bundle:bundle];
     
@@ -87,10 +91,8 @@ const void * getBytePointerCallback(void *info)
       NSMutableDictionary *cacheDict = provider.cacheDict;
       
       if (cacheDict) {
-        // Remove .png2 and other extensions before adding to cache
-        
-        NSString *cachePrefix = [DecodedDataProvider pathPrefixNoScaleOrExt:png2Prefix];
-        cacheDict[cachePrefix] = img;
+        // Add back to the cache with the prefix, not resolved prefix
+        cacheDict[prefix] = img;
       }
       
       // Note that this pointer is valid only while a ref
@@ -160,6 +162,13 @@ static void releaseCallback(void *info) {
   } else {
     obj.bundle = bundle;
   }
+
+  // In the case where the user passed in "one.png" then convert that
+  // to "one" without the extension.
+  
+  prefix = [prefix lastPathComponent];
+  prefix = [prefix stringByDeletingPathExtension];
+  obj.imagePrefix = prefix;
   
   {
     NSString *resolvedPrefix = nil;
@@ -213,11 +222,9 @@ static void releaseCallback(void *info) {
     if (resolvedPrefix == nil)
     {
       NSString *filename = [NSString stringWithFormat:@"%@%@", prefix, png2Suffix];
-      resolvedPrefix = filename;
-      obj.imagePrefix = resolvedPrefix;
+      obj.resolvedFilename = filename;
     } else {
-      NSString *lastPath = [resolvedPrefix lastPathComponent];
-      obj.imagePrefix = lastPath;
+      obj.resolvedFilename = resolvedPrefix;
     }
   }
   
@@ -251,7 +258,7 @@ static void releaseCallback(void *info) {
 {
   // Setup C level callbacks that will block up until a backingImg is defined
 
-  __block NSString *png2Prefix = self.imagePrefix;
+  NSString *png2Prefix = [self.resolvedFilename lastPathComponent];
   
   NSBundle *bundle = self.bundle;
   
