@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Invoke setup method to swap in custom impl of [UIImage imageNamed:]
     self.imageCache = NSMutableDictionary()
     UIImage.setupAppInstance(self.imageCache)
-#else
 #endif
     
     return true

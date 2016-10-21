@@ -147,14 +147,12 @@ static void *imageCacheDict = nil;
   for ( NSString *png2Path in allPng2ImagePaths ) {
     //NSLog(@"png2Path \"%@\"", png2Path);
     
-    // Grab just the path tail without the extension
-    NSString *pathTail = [png2Path lastPathComponent];
-    NSString *pathTailNoExtension = [pathTail stringByDeletingPathExtension];
+    NSString *pathTailNoExtension = [DecodedDataProvider pathPrefixNoScaleOrExt:png2Path];
     
     imageCache[pathTailNoExtension] = [NSNull null];
     
     if (debug) {
-      NSLog(@"will cache png2 extension \"%@\"", pathTailNoExtension);
+      NSLog(@"will cache png2 extension \"%@\" from path \"%@\"", pathTailNoExtension, png2Path);
     }
   }
   
