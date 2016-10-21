@@ -9,3 +9,5 @@ The PNGSquaredCarousel would be 5.6 Megs using PNGs while it is just 2.2 Megs wi
 
 The example TheElements is the classic Apple demo of table views and images, the default target loads PNGs while the second target overloads the UIImage imageNamed method to support automatically loading PNGSSquared compressed images in place of normal PNG images.
 
+The example SwiftScale shows how the image loading logic on top of UIImage can be enabled in a Swift app. The example will load a 1x, 2x, or 3x image depending on the hardware type the app is being run on using standard resource naming rules.
+

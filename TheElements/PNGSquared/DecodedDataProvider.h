@@ -24,4 +24,9 @@
 
 - (UIImage*) decodeWrapperImg;
 
+// Given a path name like ".../Bundle/Application/XYZ/one.png2" trim the path down to the path component not including a .png2 extension
+// and without a device specific or scale extension. For example, both "one@2x.png2" and "one@3x~ipad.png2" return "one"
+
++ (NSString*) pathPrefixNoScaleOrExt:(NSString*)path;
+
 @end

@@ -9,9 +9,13 @@
 
 #import "PNGSquared/PNGSquared.h"
 
+#define LOGGING
+
 @interface DecodedDataProvider ()
 
 @property (nonatomic, copy) NSString *imagePrefix;
+
+@property (nonatomic, copy) NSString *resolvedFilename;
 
 @property (nonatomic, retain) NSBundle *bundle;
 
@@ -58,7 +62,9 @@ const void * getBytePointerCallback(void *info)
       NSLog(@"getBytePointerCallback (not cached) %p", info);
     }
     
-    NSString *png2Prefix = provider.imagePrefix;
+    NSString *prefix = provider.imagePrefix;
+    NSString *png2Prefix = [provider.resolvedFilename lastPathComponent];
+    
     NSBundle *bundle = provider.bundle;
     NSDictionary *dict = [PNGSquared blockingDecodePNG2:png2Prefix bundle:bundle];
     
@@ -85,10 +91,8 @@ const void * getBytePointerCallback(void *info)
       NSMutableDictionary *cacheDict = provider.cacheDict;
       
       if (cacheDict) {
-        // Remove .png2 extension before adding to cache
-        
-        NSString *cachePrefix = [png2Prefix stringByDeletingPathExtension];
-        cacheDict[cachePrefix] = img;
+        // Add back to the cache with the prefix, not resolved prefix
+        cacheDict[prefix] = img;
       }
       
       // Note that this pointer is valid only while a ref
@@ -152,13 +156,76 @@ static void releaseCallback(void *info) {
 {
   DecodedDataProvider *obj = [[DecodedDataProvider alloc] init];
   
-  // Prefix like "name_gray" -> "name_gray.png2"
-  obj.imagePrefix = [NSString stringWithFormat:@"%@.png2", prefix];
-  
   if (bundle == nil) {
-    obj.bundle = [NSBundle mainBundle];
+    bundle = [NSBundle mainBundle];
+    obj.bundle = bundle;
   } else {
     obj.bundle = bundle;
+  }
+
+  // In the case where the user passed in "one.png" then convert that
+  // to "one" without the extension.
+  
+  prefix = [prefix lastPathComponent];
+  prefix = [prefix stringByDeletingPathExtension];
+  obj.imagePrefix = prefix;
+  
+  {
+    NSString *resolvedPrefix = nil;
+    
+    int scale = [self.class getDisplayScale];
+    
+    NSString *deviceSuffix = [self.class getDeviceSuffix];
+    
+    NSString *png2Suffix = @".png2";
+    
+    // Look for "${PREFIX}${SCALE}.png2" like "foo@2x.png2"
+    
+    {
+      NSString *ext = [NSString stringWithFormat:@"@%dx", scale];
+      NSString *filename = [NSString stringWithFormat:@"%@%@%@", prefix, ext, png2Suffix];
+      NSString *path = [bundle pathForResource:filename ofType:nil];
+      
+      if (path) {
+        resolvedPrefix = path;
+      }
+    }
+    
+    // Look for "${PREFIX}${SCALE}${DEVICE}.png2" like "foo@2x~ipad.png2"
+    
+    if (resolvedPrefix == nil)
+    {
+      NSString *ext = [NSString stringWithFormat:@"@%dx%@", scale, deviceSuffix];
+      NSString *filename = [NSString stringWithFormat:@"%@%@%@", prefix, ext, png2Suffix];
+      NSString *path = [bundle pathForResource:filename ofType:nil];
+      
+      if (path) {
+        resolvedPrefix = path;
+      }
+    }
+    
+    // Look for "${PREFIX}${DEVICE}.png2"
+    
+    if (resolvedPrefix == nil)
+    {
+      NSString *ext = [NSString stringWithFormat:@"%@", deviceSuffix];
+      NSString *filename = [NSString stringWithFormat:@"%@%@%@", prefix, ext, png2Suffix];
+      NSString *path = [bundle pathForResource:filename ofType:nil];
+      
+      if (path) {
+        resolvedPrefix = path;
+      }
+    }
+    
+    // Default to look for "${PREFIX}.png2"
+    
+    if (resolvedPrefix == nil)
+    {
+      NSString *filename = [NSString stringWithFormat:@"%@%@", prefix, png2Suffix];
+      obj.resolvedFilename = filename;
+    } else {
+      obj.resolvedFilename = resolvedPrefix;
+    }
   }
   
   obj.cacheDict = cacheDict;
@@ -190,8 +257,9 @@ static void releaseCallback(void *info) {
 - (UIImage*) decodeWrapperImg
 {
   // Setup C level callbacks that will block up until a backingImg is defined
+
+  NSString *png2Prefix = [self.resolvedFilename lastPathComponent];
   
-  __block NSString *png2Prefix = self.imagePrefix;
   NSBundle *bundle = self.bundle;
   
   // Interface with CoreGraphics and create a wrapper that matches the
@@ -256,6 +324,106 @@ static void releaseCallback(void *info) {
   CGImageRelease(cgImgRef);
   
   return img;
+}
+
+// Given a path name like ".../Bundle/Application/XYZ/one.png2" trim the path down to the path component not including a .png2 extension
+// and without a device specific or scale extension. For example, both "one@2x.png2" and "one@3x~ipad.png2" return "one"
+
++ (NSString*) pathPrefixNoScaleOrExt:(NSString*)path
+{
+#if defined(LOGGING)
+  const BOOL debugLogging = TRUE;
+#else
+  const BOOL debugLogging = FALSE;
+#endif // LOGGING
+  
+  if (debugLogging) {
+    NSLog(@"input path \"%@\"", path);
+  }
+  
+  // Grab just the path tail without the extension like ".png2"
+  
+  NSString *pathTail = [path lastPathComponent];
+  path = [pathTail stringByDeletingPathExtension];
+  
+  if ([path hasSuffix:@"~iphone"]) {
+    NSRange range;
+    range.location = 0;
+    range.length = [path length] - 7;
+    path = [path substringWithRange:range];
+  }
+  
+  if ([path hasSuffix:@"~ipad"]) {
+    NSRange range;
+    range.location = 0;
+    range.length = [path length] - 5;
+    path = [path substringWithRange:range];
+  }
+  
+  if ([path hasSuffix:@"@1x"]) {
+    NSRange range;
+    range.location = 0;
+    range.length = [path length] - 3;
+    path = [path substringWithRange:range];
+  }
+  
+  if ([path hasSuffix:@"@2x"]) {
+    NSRange range;
+    range.location = 0;
+    range.length = [path length] - 3;
+    path = [path substringWithRange:range];
+  }
+  
+  if ([path hasSuffix:@"@3x"]) {
+    NSRange range;
+    range.location = 0;
+    range.length = [path length] - 3;
+    path = [path substringWithRange:range];
+  }
+  
+  if (debugLogging) {
+    NSLog(@"output path \"%@\"", path);
+  }
+  
+  return path;
+}
+
+// Return device prefix like or "~iPhone" or "~iPad" depending on hardware
+
++ (NSString*) getDeviceSuffix
+{
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    return @"~ipad";
+  } else {
+    return @"~iphone";
+  }
+}
+
++ (int) getDisplayScale {
+  // since we call this alot, cache it
+  static int scale = 0;
+  if (scale == 0) {
+    // NOTE: In order to detect the Retina display reliably on all iOS devices,
+    // you need to check if the device is running iOS4+ and if the
+    // [UIScreen mainScreen].scale property is equal to 2.0.
+    // You CANNOT assume a device is running iOS4+ if the scale property exists,
+    // as the iPad 3.2 also contains this property.
+    // On an iPad running iOS3.2, scale will return 1.0 in 1x mode, and 2.0
+    // in 2x mode -- even though we know that device does not contain a Retina display.
+    // Apple changed this behavior in iOS4.2 for the iPad: it returns 1.0 in both
+    // 1x and 2x modes. You can test this yourself in the simulator.
+    // I test for the -displayLinkWithTarget:selector: method on the main screen
+    // which exists in iOS4.x but not iOS3.2, and then check the screen's scale:
+    
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
+        ([UIScreen mainScreen].scale >= 1.0)) {
+      scale = (int) round([UIScreen mainScreen].scale);
+    } else {
+      scale = 1;
+    }
+  }
+  
+  return scale;
 }
 
 @end
