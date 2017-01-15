@@ -18,10 +18,13 @@ class ViewController: UIViewController {
     assert(self.imageView != nil)
 
 #if PNGSQUARED
-    NSNotificationCenter.defaultCenter().addObserver(self,
-      selector: #selector(allReadyNotification),
-      name: UIImagePNGSquaredAllReadyNotification,
-      object: nil)
+    let nc = NotificationCenter.default
+    nc.addObserver(forName:Notification.Name(rawValue:UIImagePNGSquaredAllReadyNotification),
+                   object:nil,
+                   queue:nil) {
+                    notification in
+                    self.allReadyNotification()
+  }
 #endif
   }
 
