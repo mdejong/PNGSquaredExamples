@@ -289,6 +289,10 @@
 				TargetAttributes = {
 					3C4A85451B3E044C002C16E8 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 9F74CLHA49;
+					};
+					3C4A85A31B40AC58002C16E8 = {
+						DevelopmentTeam = 9F74CLHA49;
 					};
 				};
 			};
@@ -502,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9F74CLHA49;
 				INFOPLIST_FILE = PNGSquaredCarousel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -513,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9F74CLHA49;
 				ENABLE_NS_ASSERTIONS = YES;
 				INFOPLIST_FILE = PNGSquaredCarousel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -525,6 +531,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9F74CLHA49;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PNGSquaredCarousel/PNGSquared",
@@ -543,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9F74CLHA49;
 				ENABLE_NS_ASSERTIONS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
