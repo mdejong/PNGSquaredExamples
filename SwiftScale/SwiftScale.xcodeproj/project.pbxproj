@@ -10,28 +10,49 @@
 		3C415CC02290D4EE0065E537 /* one@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C415CBA2290D4EE0065E537 /* one@2x.png */; };
 		3C415CC12290D4EE0065E537 /* one@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C415CBB2290D4EE0065E537 /* one@3x.png */; };
 		3C415CC32290D4EE0065E537 /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C415CBD2290D4EE0065E537 /* one.png */; };
+		3C5359512290F0A30021015B /* DecodedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C53594A2290F0A20021015B /* DecodedDataProvider.m */; };
+		3C5359532290F0A30021015B /* dummy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C53594D2290F0A20021015B /* dummy.mm */; };
+		3C5359542290F0A30021015B /* UIImage+PNGSquared.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C53594F2290F0A20021015B /* UIImage+PNGSquared.m */; };
+		3C5359552290F0DE0021015B /* PNGSquared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C53594B2290F0A20021015B /* PNGSquared.framework */; };
 		3C5776752290CCAE003F641D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5776742290CCAE003F641D /* AppDelegate.swift */; };
 		3C5776772290CCAE003F641D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5776762290CCAE003F641D /* ViewController.swift */; };
 		3C57767A2290CCAE003F641D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5776782290CCAE003F641D /* Main.storyboard */; };
 		3C57767C2290CCB2003F641D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C57767B2290CCB2003F641D /* Assets.xcassets */; };
 		3C57767F2290CCB2003F641D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C57767D2290CCB2003F641D /* LaunchScreen.storyboard */; };
+		3CCF89E92290E07800E235FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5776762290CCAE003F641D /* ViewController.swift */; };
+		3CCF89EA2290E07800E235FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5776742290CCAE003F641D /* AppDelegate.swift */; };
+		3CCF89EE2290E07800E235FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C57767D2290CCB2003F641D /* LaunchScreen.storyboard */; };
+		3CCF89EF2290E07800E235FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C57767B2290CCB2003F641D /* Assets.xcassets */; };
+		3CCF89F02290E07800E235FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5776782290CCAE003F641D /* Main.storyboard */; };
+		3CCF89F82290E09700E235FB /* one.png2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C415CBE2290D4EE0065E537 /* one.png2 */; };
+		3CCF89F92290E09E00E235FB /* one@2x.png2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C415CBC2290D4EE0065E537 /* one@2x.png2 */; };
+		3CCF89FA2290E0A300E235FB /* one@3x.png2 in Resources */ = {isa = PBXBuildFile; fileRef = 3C415CB92290D4EE0065E537 /* one@3x.png2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C415CB72290D4DC0065E537 /* PNGSquared */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PNGSquared; sourceTree = "<group>"; };
 		3C415CB92290D4EE0065E537 /* one@3x.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "one@3x.png2"; sourceTree = "<group>"; };
 		3C415CBA2290D4EE0065E537 /* one@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "one@2x.png"; sourceTree = "<group>"; };
 		3C415CBB2290D4EE0065E537 /* one@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "one@3x.png"; sourceTree = "<group>"; };
 		3C415CBC2290D4EE0065E537 /* one@2x.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "one@2x.png2"; sourceTree = "<group>"; };
 		3C415CBD2290D4EE0065E537 /* one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one.png; sourceTree = "<group>"; };
 		3C415CBE2290D4EE0065E537 /* one.png2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = one.png2; sourceTree = "<group>"; };
+		3C53594A2290F0A20021015B /* DecodedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecodedDataProvider.m; sourceTree = "<group>"; };
+		3C53594B2290F0A20021015B /* PNGSquared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PNGSquared.framework; sourceTree = "<group>"; };
+		3C53594C2290F0A20021015B /* UIImage+PNGSquared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PNGSquared.h"; sourceTree = "<group>"; };
+		3C53594D2290F0A20021015B /* dummy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dummy.mm; sourceTree = "<group>"; };
+		3C53594E2290F0A20021015B /* DecodedDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecodedDataProvider.h; sourceTree = "<group>"; };
+		3C53594F2290F0A20021015B /* UIImage+PNGSquared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PNGSquared.m"; sourceTree = "<group>"; };
+		3C5359502290F0A20021015B /* PNGSquaredBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGSquaredBridgingHeader.h; sourceTree = "<group>"; };
 		3C5776712290CCAE003F641D /* SwiftScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5776742290CCAE003F641D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C5776762290CCAE003F641D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3C5776792290CCAE003F641D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C57767B2290CCB2003F641D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C57767E2290CCB2003F641D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3C5776802290CCB2003F641D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C5776802290CCB2003F641D /* SwiftScale-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwiftScale-Info.plist"; sourceTree = "<group>"; };
+		3C91F22B2290E9E300A065A0 /* PNGSquared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PNGSquared.framework; path = SwiftScale/PNGSquared/PNGSquared.framework; sourceTree = "<group>"; };
+		3CCF89F62290E07800E235FB /* SwiftScale2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftScale2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CCF89F72290E07900E235FB /* SwiftScale2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwiftScale2-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,14 +63,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CCF89EB2290E07800E235FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C5359552290F0DE0021015B /* PNGSquared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C5359492290F0A20021015B /* PNGSquared */ = {
+			isa = PBXGroup;
+			children = (
+				3C53594B2290F0A20021015B /* PNGSquared.framework */,
+				3C53594C2290F0A20021015B /* UIImage+PNGSquared.h */,
+				3C53594F2290F0A20021015B /* UIImage+PNGSquared.m */,
+				3C53594D2290F0A20021015B /* dummy.mm */,
+				3C53594E2290F0A20021015B /* DecodedDataProvider.h */,
+				3C53594A2290F0A20021015B /* DecodedDataProvider.m */,
+				3C5359502290F0A20021015B /* PNGSquaredBridgingHeader.h */,
+			);
+			path = PNGSquared;
+			sourceTree = "<group>";
+		};
 		3C5776682290CCAE003F641D = {
 			isa = PBXGroup;
 			children = (
 				3C5776732290CCAE003F641D /* SwiftScale */,
 				3C5776722290CCAE003F641D /* Products */,
+				3C91F22A2290E9E200A065A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				3C5776712290CCAE003F641D /* SwiftScale.app */,
+				3CCF89F62290E07800E235FB /* SwiftScale2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,16 +114,25 @@
 				3C5776782290CCAE003F641D /* Main.storyboard */,
 				3C57767B2290CCB2003F641D /* Assets.xcassets */,
 				3C57767D2290CCB2003F641D /* LaunchScreen.storyboard */,
-				3C5776802290CCB2003F641D /* Info.plist */,
+				3C5776802290CCB2003F641D /* SwiftScale-Info.plist */,
+				3CCF89F72290E07900E235FB /* SwiftScale2-Info.plist */,
 				3C415CBD2290D4EE0065E537 /* one.png */,
 				3C415CBE2290D4EE0065E537 /* one.png2 */,
 				3C415CBA2290D4EE0065E537 /* one@2x.png */,
 				3C415CBC2290D4EE0065E537 /* one@2x.png2 */,
 				3C415CBB2290D4EE0065E537 /* one@3x.png */,
 				3C415CB92290D4EE0065E537 /* one@3x.png2 */,
-				3C415CB72290D4DC0065E537 /* PNGSquared */,
+				3C5359492290F0A20021015B /* PNGSquared */,
 			);
 			path = SwiftScale;
+			sourceTree = "<group>";
+		};
+		3C91F22A2290E9E200A065A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C91F22B2290E9E300A065A0 /* PNGSquared.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +153,23 @@
 			name = SwiftScale;
 			productName = SwiftScale;
 			productReference = 3C5776712290CCAE003F641D /* SwiftScale.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3CCF89E72290E07800E235FB /* SwiftScale2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CCF89F32290E07800E235FB /* Build configuration list for PBXNativeTarget "SwiftScale2" */;
+			buildPhases = (
+				3CCF89E82290E07800E235FB /* Sources */,
+				3CCF89EB2290E07800E235FB /* Frameworks */,
+				3CCF89EC2290E07800E235FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftScale2;
+			productName = SwiftScale;
+			productReference = 3CCF89F62290E07800E235FB /* SwiftScale2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				3C5776702290CCAE003F641D /* SwiftScale */,
+				3CCF89E72290E07800E235FB /* SwiftScale2 */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +220,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CCF89EC2290E07800E235FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CCF89F92290E09E00E235FB /* one@2x.png2 in Resources */,
+				3CCF89EE2290E07800E235FB /* LaunchScreen.storyboard in Resources */,
+				3CCF89EF2290E07800E235FB /* Assets.xcassets in Resources */,
+				3CCF89FA2290E0A300E235FB /* one@3x.png2 in Resources */,
+				3CCF89F02290E07800E235FB /* Main.storyboard in Resources */,
+				3CCF89F82290E09700E235FB /* one.png2 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -157,6 +242,18 @@
 			files = (
 				3C5776772290CCAE003F641D /* ViewController.swift in Sources */,
 				3C5776752290CCAE003F641D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CCF89E82290E07800E235FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C5359532290F0A30021015B /* dummy.mm in Sources */,
+				3C5359542290F0A30021015B /* UIImage+PNGSquared.m in Sources */,
+				3C5359512290F0A30021015B /* DecodedDataProvider.m in Sources */,
+				3CCF89E92290E07800E235FB /* ViewController.swift in Sources */,
+				3CCF89EA2290E07800E235FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +401,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9F74CLHA49;
-				INFOPLIST_FILE = SwiftScale/Info.plist;
+				INFOPLIST_FILE = "SwiftScale/SwiftScale-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -323,7 +420,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9F74CLHA49;
-				INFOPLIST_FILE = SwiftScale/Info.plist;
+				INFOPLIST_FILE = "SwiftScale/SwiftScale-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -331,6 +428,56 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.SwiftScale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3CCF89F42290E07800E235FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9F74CLHA49;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftScale/PNGSquared",
+				);
+				INFOPLIST_FILE = "SwiftScale/SwiftScale2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-D PNGSQUARED";
+				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.SwiftScale2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SwiftScale/PNGSquared/PNGSquaredBridgingHeader.h;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3CCF89F52290E07800E235FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9F74CLHA49;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftScale/PNGSquared",
+				);
+				INFOPLIST_FILE = "SwiftScale/SwiftScale2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-D PNGSQUARED";
+				PRODUCT_BUNDLE_IDENTIFIER = com.helpurock.SwiftScale2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SwiftScale/PNGSquared/PNGSquaredBridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -353,6 +500,15 @@
 			buildConfigurations = (
 				3C5776842290CCB2003F641D /* Debug */,
 				3C5776852290CCB2003F641D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CCF89F32290E07800E235FB /* Build configuration list for PBXNativeTarget "SwiftScale2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CCF89F42290E07800E235FB /* Debug */,
+				3CCF89F52290E07800E235FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

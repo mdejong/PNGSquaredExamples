@@ -16,15 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+#if PNGSQUARED
   var imageCache: NSMutableDictionary?
+#endif
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
 #if PNGSQUARED
-    // Invoke setup method to swap in custom impl of [UIImage imageNamed:]
-    self.imageCache = NSMutableDictionary()
-    UIImage.setupAppInstance(self.imageCache)
+    // Invoke setup method to swap in custom impl of [UIImage imageNamed:(NSMutableDictionary*)]
+    let mutableDictRef = NSMutableDictionary()
+    UIImage.setupAppInstance(mutableDictRef)
+    self.imageCache = mutableDictRef
 #endif
     
     return true
