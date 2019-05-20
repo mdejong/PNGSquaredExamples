@@ -1,6 +1,0 @@
-framework module PNGSquared {
-  umbrella header "PNGSquared.h"
-
-  export *
-  module * { export * }
-}
